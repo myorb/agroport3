@@ -1,0 +1,28 @@
+{
+  "name": "agroport2",
+  "version": "1.0.0",
+  "description": "agroxy and agroprt",
+  "author": "alex",
+  "private": true,
+  "scripts": {
+    "dev": "nuxt",
+    "build": "nuxt build",
+    "start": "NUXT_PORT=80 nuxt start",
+    "generate": "nuxt generate",
+    "test": "jest"
+  },
+  "dependencies": {
+    "@nuxtjs/axios": "^5.3.6",
+    "@nuxtjs/dotenv": "^1.4.0",
+    "@nuxtjs/pwa": "^3.0.0-0",
+    "nuxt": "^2.0.0"
+  },
+  "devDependencies": {
+    "@nuxtjs/vuetify": "^1.0.0",
+    "@vue/test-utils": "^1.0.0-beta.27",
+    "babel-jest": "^24.1.0",
+    "jest": "^24.1.0",
+    "material-design-icons-iconfont": "^5.0.1",
+    "vue-jest": "^4.0.0-0"
+  }
+}
