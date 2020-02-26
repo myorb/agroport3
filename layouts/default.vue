@@ -1,13 +1,13 @@
 <template>
   <v-app light>
-    <v-toolbar style="background: linear-gradient(to right, #e19470, #b2fafd);">
+    <v-toolbar style="background: linear-gradient(to right,  orange, yellow);">
       <router-link to="/">
-        <v-img class="mr-3" src="/output-onlinepngtools3.png" height="100px" width="240px"></v-img>
+        <v-img class="mr-1 main-icon" src="/output-onlinepngtools3.png"></v-img>
       </router-link>
       <v-spacer></v-spacer>
       <v-toolbar-items>
-        <v-btn text>Login</v-btn>
-        <v-btn text>Register</v-btn>
+        <v-btn class="default-btn" text>Вхід</v-btn>
+        <v-btn class="default-btn" text>Реєстрація</v-btn>
       </v-toolbar-items>
     </v-toolbar>
 
@@ -29,3 +29,21 @@
       </v-footer>
   </v-app>
 </template>
+
+<style>
+  .main-icon {
+    height: 100px;
+    width: 240px;
+  }
+  @media (max-width: 576px) {
+    .main-icon {
+      height: 60px;
+      width: 144px;
+    }
+    .default-btn {
+      padding-left: 8px!important;
+      padding-right: 8px!important;
+      font-size: 12px!important;
+    }
+  }
+</style>

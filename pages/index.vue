@@ -2,7 +2,7 @@
   <v-content>
 
     <section>
-      <v-parallax :src="$vuetify.breakpoint.smAndDown?'/train.jpg':'/train.gif'" class="section1">
+      <v-parallax :src="$vuetify.breakpoint.smAndDown?'/train.jpg':'/train.gif'" height="800">
         <v-layout column align-center justify-center class="white--text">
           <h1 class="mb-2 text-center section1-title">AGROPORT TRADE</h1>
           <div class="subheading mb-4 text-center section1-content">Інформаційно-торгова платформа, що полегшує внутрішню та міжнародну купівлю та продаж сільськогосподарських товарів</div>
@@ -91,39 +91,63 @@
     <section>
       <v-layout row wrap justify-center class="my-12">
         <v-flex xs12 md4 ml-5 mr-5>
-          <form>
+          <v-form
+            ref="form"
+            v-model="valid"
+            lazy-validation
+          >
             <v-text-field
+              v-model="name"
               :counter="10"
-              label="Name"
+              :rules="nameRules"
+              label="Ім'я"
               required
             ></v-text-field>
             <v-text-field
-              label="E-mail" required></v-text-field>
-            <v-text-field
-              :counter="10"
-              label="Phone"
+              v-model="email"
+              :rules="emailRules"
+              label="E-mail"
               required
             ></v-text-field>
             <v-text-field
+              v-model="phone"
               :counter="10"
-              label="Password"
+              :rules="phoneRules"
+              label="Телефон"
+              required
+            ></v-text-field>
+            <v-text-field
+              v-model="password"
+              :counter="6"
+              :rules="passwordRules"
+              label="Пароль"
               required
             ></v-text-field>
 
             <v-checkbox
-              label="Do you agree?"
+              v-model="checkbox"
+              label="Згоден на обробку даних"
+              :rules="[v => !!v || 'You must agree to continue!']"
               required
-              @change="$v.checkbox.$touch()"
-              @blur="$v.checkbox.$touch()"
-            ></v-checkbox>
-          </form>
+            >
+              <!--@change="$v.checkbox.$touch()"-->
+              <!--@blur="$v.checkbox.$touch()"-->
+            </v-checkbox>
+            <v-btn
+              :disabled="!valid"
+              color="success"
+              class="mr-4"
+              @click="validate"
+            >
+              Зареєструватися
+            </v-btn>
+          </v-form>
         </v-flex>
       </v-layout>
     </section>
 
     <section>
-      <v-parallax src="https://cdn.vuetifyjs.com/images/parallax/material.jpg" height="380">
-        <v-layout row wrap justify-center class="my-12">
+        <v-layout row wrap justify-center class="py-12" style="background: linear-gradient(to right,  orange, yellow);">
           <v-flex xs12 sm4>
             <v-card flat class="transparent white--text">
               <v-card-title primary-title class="layout justify-center">
@@ -169,7 +193,6 @@
             </v-card>
           </v-flex>
         </v-layout>
-      </v-parallax>
     </section>
 
   </v-content>
@@ -181,23 +204,49 @@ import Vue from "vue";
 export default {
   data() {
     return {
-      title: "123"
+      title: "123",
+      valid: true,
+      name: '',
+      nameRules: [
+        v => !!v || "Введіть ваше ім'я",
+        v => (v && v.length <= 10) || "Ім'я не повинно бути довшим за 10 символів",
+      ],
+      email: '',
+      emailRules: [
+        v => !!v || 'Введіть ваш E-mail',
+        v => /.+@.+\..+/.test(v) || 'Перевірте правильність написання вашого E-mail',
+      ],
+      phone: '',
+      phoneRules: [
+        v => !!v || 'Введіть ваш номер телефону',
+        v => (v && v.length == 10) || 'Номер телефона повинен складатися з 10 цифр',
+      ],
+      password: '',
+      passwordRules: [
+        v => !!v || 'Введіть пароль',
+        v => (v && v.length >= 6) || 'Пароль повинен бути довшим за 6 символів',
+      ],
+      checkbox: false,
     };
   },
-  methods: {}
+  methods: {
+    validate () {
+      if (this.$refs.form.validate()) {
+        this.snackbar = true
+      }
+    },
+  },
 };
 </script>
 
 
 <style>
-  .section1 {
-    height: calc(100vh - 56px)!important;
-  }
   .section1-title {
     font-size:96px;
+    font-weight: 800
   }
   .section1-content {
-    font-size: 48px;
+    font-size: 36px;
   }
   @media (max-width: 992px) {
     .section1-title {
