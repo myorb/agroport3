@@ -26,7 +26,7 @@
         <v-checkbox
           v-model="checkbox"
           label="Згоден на обробку даних"
-          :rules="[v => !!v || 'You must agree to continue!']"
+          :rules="[v => !!v || 'Ви повинні погодитися, щоб продовжити!']"
           required
         >
           <!--@change="$v.checkbox.$touch()"-->
@@ -44,8 +44,8 @@
       :multi-line="true"
     >
       <h1>
-        Дякуємо за вашу реєстрацію, ми незабаром надішлемо на вашу електронну
-        адресу лист з подальшими інструкціями
+        Дякуємо {{ name }} за вашу реєстрацію, ми незабаром надішлемо на вашу
+        електронну адресу лист з подальшими інструкціями
       </h1>
       <v-btn text @click="snackbar = false">
         <v-icon size="35" class="orange--text">mdi-close</v-icon>
@@ -89,6 +89,12 @@ export default {
     validate() {
       if (this.$refs.form.validate()) {
         this.snackbar = true;
+        let data = {
+          name: this.name,
+          phone: this.phone,
+          email: this.email
+        };
+        console.log(data);
       }
     }
   }
