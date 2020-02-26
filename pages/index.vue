@@ -30,7 +30,7 @@
               <v-flex xs12 md4>
                 <v-card flat class="transparent">
                   <v-card-text class="text-center">
-                    <v-icon size="75" class="green--text text--lighten-2">mdi-account-cash</v-icon>
+                    <v-icon size="75" class="green--text text--lighten-2">mdi-account-check</v-icon>
                   </v-card-text>
                   <v-card-title primary-title class="layout justify-center">
                     <div class="headline text-center">Онлайн-торги підтвердженими об’ємами</div>
@@ -43,7 +43,7 @@
               <v-flex xs12 md4>
                 <v-card flat class="transparent">
                   <v-card-text class="text-center">
-                    <v-icon size="75" class="red--text text--lighten-2">mdi-charity</v-icon>
+                    <v-icon size="75" class="blue--text text--lighten-2">mdi-finance</v-icon>
                   </v-card-text>
                   <v-card-title primary-title class="layout justify-center">
                     <div class="headline">Індекси цін</div>
@@ -56,7 +56,7 @@
               <v-flex xs12 md4>
                 <v-card flat class="transparent">
                   <v-card-text class="text-center">
-                    <v-icon size="75" class="orange--text text--lighten-2">mdi-barley</v-icon>
+                    <v-icon size="75" class="orange--text text--lighten-2">mdi-file-document-edit-outline</v-icon>
                   </v-card-text>
                   <v-card-title primary-title class="layout justify-center">
                     <div class="headline text-center">Автоматичний документообіг</div>
@@ -89,7 +89,7 @@
     </section>
 
     <section>
-      <v-layout row wrap justify-center class="my-12">
+      <v-layout row no-gutters wrap justify-center class="my-12">
         <v-flex xs12 md4 ml-5 mr-5>
           <v-form
             ref="form"
@@ -147,7 +147,7 @@
     </section>
 
     <section>
-        <v-layout row wrap justify-center class="py-12" style="background: linear-gradient(to right,  orange, yellow);">
+        <v-layout row no-gutters wrap justify-center class="py-12" style="background: linear-gradient(to right,  orange, yellow);">
           <v-flex xs12 sm4>
             <v-card flat class="transparent white--text">
               <v-card-title primary-title class="layout justify-center">
