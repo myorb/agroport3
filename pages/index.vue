@@ -2,13 +2,13 @@
   <v-content>
 
     <section>
-      <v-parallax :src="$vuetify.breakpoint.smAndDown?'/train.jpg':'/train.gif'" height="800">
+      <v-parallax :src="$vuetify.breakpoint.smAndDown?'/agroxy.png':'/agroxy.png'" height="800">
         <v-layout column align-center justify-center class="white--text">
           <h1 class="mb-2 text-center section1-title">AGROPORT TRADE</h1>
           <div class="subheading mb-4 text-center section1-content">Інформаційно-торгова платформа, що полегшує внутрішню та міжнародну купівлю та продаж сільськогосподарських товарів</div>
           <v-btn
             class="mt-12"
-            color="orange lighten-2"
+            color="white lighten-2"
             x-large
             href="/pre-made-themes"
           >Розпочнемо?</v-btn>
@@ -200,6 +200,7 @@
 
 <script>
 import Vue from "vue";
+
 
 export default {
   data() {
