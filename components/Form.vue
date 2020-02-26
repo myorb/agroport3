@@ -5,13 +5,6 @@
         <v-text-field v-model="name" :counter="10" :rules="nameRules" label="Ім'я" required></v-text-field>
         <v-text-field v-model="email" :rules="emailRules" label="E-mail" required></v-text-field>
         <v-text-field v-model="phone" :counter="10" :rules="phoneRules" label="Телефон" required></v-text-field>
-        <v-text-field
-          v-model="password"
-          :counter="6"
-          :rules="passwordRules"
-          label="Пароль"
-          required
-        ></v-text-field>
 
         <v-checkbox
           v-model="checkbox"
@@ -25,6 +18,12 @@
         <v-btn :disabled="!valid" color="success" class="mr-4" @click="validate">Зареєструватися</v-btn>
       </v-form>
     </v-flex>
+    <v-snackbar v-model="snackbar" color="success" timeout="15000" :multi-line="true">
+      <h1>Дякуємо за вашу реєстрацію, ми незабаром надішлемо на вашу електронну адресу лист з подальшими інструкціями</h1>
+      <v-btn text @click="snackbar = false">
+        <v-icon size="35" class="orange--text">mdi-close</v-icon>
+      </v-btn>
+    </v-snackbar>
   </v-layout>
 </template>
 
@@ -34,7 +33,7 @@ import Vue from "vue";
 export default {
   data() {
     return {
-      title: "123",
+      snackbar: false,
       valid: true,
       name: "",
       nameRules: [
@@ -54,11 +53,6 @@ export default {
         v => !!v || "Введіть ваш номер телефону",
         v =>
           (v && v.length == 10) || "Номер телефона повинен складатися з 10 цифр"
-      ],
-      password: "",
-      passwordRules: [
-        v => !!v || "Введіть пароль",
-        v => (v && v.length >= 6) || "Пароль повинен бути довшим за 6 символів"
       ],
       checkbox: false
     };

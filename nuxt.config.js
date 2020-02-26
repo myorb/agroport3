@@ -11,14 +11,17 @@ export default {
    */
   head: {
     titleTemplate: "%s - " + process.env.npm_package_name,
-    title: process.env.npm_package_name || "",
+    title: process.env.npm_package_name || "trade agroport",
     meta: [
       { charset: "utf-8" },
       { name: "viewport", content: "width=device-width, initial-scale=1" },
+      { name: "keywords", content: "agroport, agroxy, trade" },
       {
         hid: "description",
         name: "description",
-        content: process.env.npm_package_description || ""
+        content:
+          process.env.npm_package_description ||
+          "agroport and agroxy trade platform"
       }
     ],
     link: [{ rel: "icon", type: "image/x-icon", href: "/favicon.ico" }]
@@ -63,12 +66,12 @@ export default {
     theme: {
       themes: {
         light: {
-          primary: colors.red.darken1, // #E53935
-          secondary: colors.red.lighten4, // #FFCDD2
-          accent: colors.indigo.base, // #3F51B5
-        },
-      },
-    },
+          primary: colors.blue.darken1,
+          secondary: colors.blue.lighten4,
+          accent: colors.indigo.base
+        }
+      }
+    }
   },
   /*
    ** Build configuration

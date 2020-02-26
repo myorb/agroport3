@@ -7,7 +7,7 @@
           <div
             class="subheading mb-4 text-center section1-content"
           >Інформаційно-торгова платформа, що полегшує внутрішню та міжнародну купівлю та продаж сільськогосподарських товарів</div>
-          <v-btn class="mt-12" color="white lighten-2" x-large href="/pre-made-themes">
+          <v-btn class="mt-12" color="white lighten-2" x-large @click="$vuetify.goTo('#form')">
             <span class="pa-3">Розпочнемо</span>
             <v-icon size="35" class="green--text text--lighten-2">mdi-crosshairs-question</v-icon>
           </v-btn>
@@ -45,7 +45,7 @@
                     <v-icon size="75" class="blue--text text--lighten-2">mdi-finance</v-icon>
                   </v-card-text>
                   <v-card-title primary-title class="layout justify-center">
-                    <div class="headline">Індекси цін</div>
+                    <a href="https://agroxy.com/statistic" class="headline">Індекси цін</a>
                   </v-card-title>
                   <v-card-text>Система формує середній по країні / регіону індекс цін основних агрокультур в місцевій валюті грунтуючись на внутрішньому алгоритмі.</v-card-text>
                 </v-card>
@@ -86,7 +86,7 @@
       </v-parallax>
     </section>
 
-    <section>
+    <section id="form">
       <Form />
     </section>
 
