@@ -2,10 +2,10 @@
   <v-content>
 
     <section>
-      <v-parallax :src="$vuetify.breakpoint.smAndDown?'/train.jpg':'/train.gif'" height="800">
+      <v-parallax :src="$vuetify.breakpoint.smAndDown?'/train.jpg':'/train.gif'" class="section1">
         <v-layout column align-center justify-center class="white--text">
-          <h1 class="mb-2 display-4 text-center">AGROPORT TRADE</h1>
-          <div class="subheading display-2 mb-4 text-center">Інформаційно-торгова платформа, що полегшує внутрішню та міжнародну купівлю та продаж сільськогосподарських товарів</div>
+          <h1 class="mb-2 text-center section1-title">AGROPORT TRADE</h1>
+          <div class="subheading mb-4 text-center section1-content">Інформаційно-торгова платформа, що полегшує внутрішню та міжнародну купівлю та продаж сільськогосподарських товарів</div>
           <v-btn
             class="mt-12"
             color="orange lighten-2"
@@ -90,7 +90,7 @@
 
     <section>
       <v-layout row wrap justify-center class="my-12">
-        <v-flex xs12 md4>
+        <v-flex xs12 md4 ml-5 mr-5>
           <form>
             <v-text-field
               :counter="10"
@@ -187,3 +187,33 @@ export default {
   methods: {}
 };
 </script>
+
+
+<style>
+  .section1 {
+    height: calc(100vh - 56px)!important;
+  }
+  .section1-title {
+    font-size:96px;
+  }
+  .section1-content {
+    font-size: 48px;
+  }
+  @media (max-width: 992px) {
+    .section1-title {
+      font-size: 48px;
+    }
+    .section1-content {
+      font-size: 24px;
+    }
+  }
+  @media (max-width: 576px) {
+    .section1-title {
+      font-size: 36px;
+    }
+    .section1-content {
+      font-size: 18px;
+    }
+  }
+
+</style>
