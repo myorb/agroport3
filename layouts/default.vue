@@ -6,8 +6,15 @@
       </router-link>
       <v-spacer></v-spacer>
       <v-toolbar-items>
-        <v-btn class="default-btn" href="https://agroxy.com/user/sign-in/signin" text>Вхід в Агрокси</v-btn>
-        <v-btn class="default-btn" @click="$vuetify.goTo('#form')" text>Реєстрація</v-btn>
+        <v-btn
+          class="default-btn"
+          href="https://agroxy.com/user/sign-in/signin"
+          text
+          >Вхід в Агрокси</v-btn
+        >
+        <v-btn class="default-btn" @click="$vuetify.goTo('#form')" text
+          >Реєстрація</v-btn
+        >
       </v-toolbar-items>
     </v-toolbar>
 
@@ -19,7 +26,12 @@
           <div class="float-right ml-4">
             Made with
             <v-icon class="red--text">mdi-heart</v-icon>
-            <a href="https://agroxy.com/page/about" target="_blank">by Agroxy</a>
+            <a
+              class="red--text"
+              href="https://agroxy.com/page/about"
+              target="_blank"
+              >by Agroxy</a
+            >
           </div>
         </v-flex>
       </v-layout>

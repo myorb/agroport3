@@ -2,9 +2,26 @@
   <v-layout row no-gutters wrap justify-center class="my-12">
     <v-flex xs12 md4 ml-5 mr-5>
       <v-form ref="form" v-model="valid" lazy-validation>
-        <v-text-field v-model="name" :counter="10" :rules="nameRules" label="Ім'я" required></v-text-field>
-        <v-text-field v-model="email" :rules="emailRules" label="E-mail" required></v-text-field>
-        <v-text-field v-model="phone" :counter="10" :rules="phoneRules" label="Телефон" required></v-text-field>
+        <v-text-field
+          v-model="name"
+          :counter="10"
+          :rules="nameRules"
+          label="Ім'я"
+          required
+        ></v-text-field>
+        <v-text-field
+          v-model="email"
+          :rules="emailRules"
+          label="E-mail"
+          required
+        ></v-text-field>
+        <v-text-field
+          v-model="phone"
+          :counter="10"
+          :rules="phoneRules"
+          label="Телефон"
+          required
+        ></v-text-field>
 
         <v-checkbox
           v-model="checkbox"
@@ -15,11 +32,21 @@
           <!--@change="$v.checkbox.$touch()"-->
           <!--@blur="$v.checkbox.$touch()"-->
         </v-checkbox>
-        <v-btn :disabled="!valid" color="success" class="mr-4" @click="validate">Зареєструватися</v-btn>
+        <v-btn :disabled="!valid" color="success" class="mr-4" @click="validate"
+          >Зареєструватися</v-btn
+        >
       </v-form>
     </v-flex>
-    <v-snackbar v-model="snackbar" color="success" timeout="15000" :multi-line="true">
-      <h1>Дякуємо за вашу реєстрацію, ми незабаром надішлемо на вашу електронну адресу лист з подальшими інструкціями</h1>
+    <v-snackbar
+      v-model="snackbar"
+      color="success"
+      :timeout="timeout"
+      :multi-line="true"
+    >
+      <h1>
+        Дякуємо за вашу реєстрацію, ми незабаром надішлемо на вашу електронну
+        адресу лист з подальшими інструкціями
+      </h1>
       <v-btn text @click="snackbar = false">
         <v-icon size="35" class="orange--text">mdi-close</v-icon>
       </v-btn>
@@ -34,6 +61,7 @@ export default {
   data() {
     return {
       snackbar: false,
+      timeout: 15000,
       valid: true,
       name: "",
       nameRules: [
