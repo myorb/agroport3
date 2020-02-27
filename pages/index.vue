@@ -8,16 +8,9 @@
             Інформаційно-торгова платформа, що полегшує внутрішню та міжнародну
             купівлю та продаж сільськогосподарських товарів
           </div>
-          <v-btn
-            class="mt-12"
-            color="white lighten-2"
-            x-large
-            @click="$vuetify.goTo('#form')"
-          >
+          <v-btn class="mt-12" color="white lighten-2" x-large @click="$vuetify.goTo('#form')">
             <span class="pa-3">Розпочнемо</span>
-            <v-icon size="35" class="green--text text--lighten-2"
-              >mdi-crosshairs-question</v-icon
-            >
+            <v-icon size="35" class="green--text text--lighten-2">mdi-crosshairs-question</v-icon>
           </v-btn>
         </v-layout>
       </v-parallax>
@@ -30,9 +23,7 @@
     <section>
       <v-parallax src="/maxresdefault.jpg" height="380">
         <v-layout column align-center justify-center>
-          <div class="headline white--text mb-4 text-center">
-            Презентації в регіонах
-          </div>
+          <div class="headline white--text mb-4 text-center">Презентації в регіонах</div>
           <em>В рамках регіональних форумів з розвитку фермерства Агропорт</em>
           <v-btn
             class="mt-12"
@@ -40,8 +31,7 @@
             dark
             large
             href="https://agroport.ua"
-            >Календар заходів</v-btn
-          >
+          >Календар заходів</v-btn>
         </v-layout>
       </v-parallax>
     </section>

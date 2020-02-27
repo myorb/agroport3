@@ -6,6 +6,10 @@ export default {
     port: 80, // default: 3000
     host: "0.0.0.0" // default: localhost
   },
+  serverMiddleware: [
+    // "~/api/logger",
+    // { path: "/api", handler: "~/api/index.js" }
+  ],
   /*
    ** Headers of the page
    */
@@ -41,7 +45,15 @@ export default {
   /*
    ** Nuxt.js dev-modules
    */
-  buildModules: ["@nuxtjs/vuetify"],
+  buildModules: [
+    [
+      "@nuxtjs/google-analytics",
+      {
+        id: "UA-99020570-4"
+      }
+    ],
+    "@nuxtjs/vuetify"
+  ],
   /*
    ** Nuxt.js modules
    */
@@ -56,7 +68,18 @@ export default {
    ** Axios module configuration
    ** See https://axios.nuxtjs.org/options
    */
-  axios: {},
+  axios: {
+    // prefix: "/api/",
+    // proxy: true
+  },
+
+  // proxy: {
+  //   "/api": {
+  //     target: process.env.SECRET_API_URL,
+  //     pathRewrite: { "^/api/": "" },
+  //     logLevel: "debug"
+  //   }
+  // },
   /*
    ** vuetify module configuration
    ** https://github.com/nuxt-community/vuetify-module
